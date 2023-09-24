@@ -18,25 +18,28 @@ const TopThree = () => {
   };
 
   return (
-    data &&
+    data && 
     <div className='flex items-center justify-between gap-5 flex-wrap h-auto py-20 bg-zinc-900 mt-20 md:px-20'>
       <Top3Card
         bgColor={"rgba(113, 197, 244, 0.38)"}
         poster={data[0]?.volumeInfo.imageLinks.thumbnail}
         Title={data[0]?.volumeInfo.title}
-        Description={truncateDescription(data[0]?.volumeInfo.description, 100)}
+        Description={truncateDescription(data[0]?.volumeInfo.description, 50)}
+        goTo={data[0]?.volumeInfo.infoLink}
       />
       <Top3Card
         bgColor={"rgba(171, 113, 244, 0.38)"}
         poster={data[1]?.volumeInfo.imageLinks.thumbnail}
         Title={data[1]?.volumeInfo.title}
-        Description={truncateDescription(data[1]?.volumeInfo.description, 100)}
+        Description={truncateDescription(data[1]?.volumeInfo.description, 50)}
+        goTo={data[1]?.volumeInfo.infoLink}
       />
       <Top3Card
         bgColor={"rgba(244, 113, 168, 0.38)"}
         poster={data[2]?.volumeInfo.imageLinks.thumbnail}
         Title={data[2]?.volumeInfo.title}
-        Description={truncateDescription(data[2]?.volumeInfo.description, 100)}
+        Description={truncateDescription(data[2]?.volumeInfo.description, 50)}
+        goTo={data[2]?.volumeInfo.infoLink}
       />
     </div>
   );
