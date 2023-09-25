@@ -1,5 +1,6 @@
 import React, {useContext} from 'react'
 import BooksContext from '../Context/BooksContext'
+import { nanoid } from 'nanoid';
 
 const BooksList = ({setIsTopThreeVisible, setClickedPosterID}) => {
   const data = useContext(BooksContext);
@@ -8,7 +9,6 @@ const BooksList = ({setIsTopThreeVisible, setClickedPosterID}) => {
   const handlePosterClick = (e) => {
     setIsTopThreeVisible(false);
     setClickedPosterID(e.target.id)
-    console.log(e.target.id);
   }
 
   return (
@@ -21,8 +21,8 @@ const BooksList = ({setIsTopThreeVisible, setClickedPosterID}) => {
                 return(
                   <img 
                   id={singleData?.id}
-                  key={singleData?.id} 
-                  src={ singleData?.volumeInfo.imageLinks.thumbnail} 
+                  key={nanoid()} 
+                  src={ singleData?.volumeInfo?.imageLinks?.thumbnail} 
                   className=' w-64 p-10 cursor-pointer hover:scale-105 duration-300 transition-all' 
                   alt="Book" 
                   onClick={handlePosterClick}

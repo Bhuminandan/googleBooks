@@ -10,6 +10,7 @@ const Navbar = ({setSearchedTerm, setIsTopThreeVisible}) => {
     const handleSearchClick = () => {
         setSearchedTerm(SearchedTerm);
         setIsTopThreeVisible(true)
+        setSetSearchedTerm('')
     }
 
   return (
@@ -23,6 +24,7 @@ const Navbar = ({setSearchedTerm, setIsTopThreeVisible}) => {
                 <AiOutlineSearch className='  text-zinc-500 text-2xl'/>
                 <input type="text" placeholder='Search for the book you want and read it now... Sherlock Holmes, Harry Pot...'
                 className='w-20 md:w-64 lg:w-96 bg-transparent  outline-none'
+                value={SearchedTerm}
                 onChange={(e) => setSetSearchedTerm(e.target.value)}
                 />
             </div>
